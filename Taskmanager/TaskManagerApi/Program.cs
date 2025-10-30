@@ -5,15 +5,19 @@ var builder = WebApplication.CreateBuilder(args);
 // Register TaskService
 builder.Services.AddSingleton<TaskService>();
 
-//  Add CORS support
+// Add CORS support
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-            policy.WithOrigins("http://localhost:5173") 
-                  .AllowAnyHeader()
-                  .AllowAnyMethod();
+            policy.WithOrigins(
+                "http://localhost:5173",
+                "https://pathlock-14y3.vercel.app"
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
         });
 });
 
@@ -31,7 +35,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-//  Use the CORS policy
+// Enable CORS
 app.UseCors("AllowFrontend");
 
 app.MapControllers();

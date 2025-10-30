@@ -490,3 +490,4 @@ C:\Users\adity\Desktop\pathlock\ProjectManagement\ProjectManager\obj\Debug\net9.
 C:\Users\adity\Desktop\pathlock\ProjectManagement\ProjectManager\obj\Debug\net9.0\ProjectManager.pdb
 C:\Users\adity\Desktop\pathlock\ProjectManagement\ProjectManager\obj\Debug\net9.0\ProjectManager.genruntimeconfig.cache
 C:\Users\adity\Desktop\pathlock\ProjectManagement\ProjectManager\obj\Debug\net9.0\ref\ProjectManager.dll
+C:\Users\adity\Desktop\pathlock\ProjectManagement\ProjectManager\obj\Debug\net9.0\ProjectManager.sourcelink.json

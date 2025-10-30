@@ -13,7 +13,7 @@ RUN dotnet publish "ProjectManager.csproj" -c Release -o /app/publish /p:UseAppH
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
-ENV ASPNETCORE_URLS=http://+:5173
-EXPOSE 5173
+ENV ASPNETCORE_URLS=http://+:5195
+EXPOSE 5195
 COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "ProjectManager.dll"]

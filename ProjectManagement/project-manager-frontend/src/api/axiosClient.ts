@@ -3,7 +3,7 @@ import axios from "axios";
 // Create an Axios instance with a base URL
 const axiosClient = axios.create({
   // Set the base URL for all requests
-  baseURL: "http://localhost:5195/api",
+  baseURL: "https://pathlockprojectmanage.onrender.com/api",
 });
 
 // Add a request interceptor to include the Authorization header

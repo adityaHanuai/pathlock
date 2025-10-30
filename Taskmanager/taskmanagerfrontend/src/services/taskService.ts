@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { Task } from "../types/Task";
 
-const API_URL = "http://localhost:5245/api/tasks"; // backend URL
+const API_URL = "https://pathlocktaskmanager.onrender.com/api/tasks"; // backend URL
 
 // Fetch all tasks
 export const getTasks = async () => {

@@ -7,6 +7,7 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ export default function Login() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setError("");
+    setIsSubmitting(true);
 
     // Call login API
     try {
@@ -23,6 +25,8 @@ export default function Login() {
       navigate("/");
     } catch {
       setError("Invalid credentials");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -49,10 +53,11 @@ export default function Login() {
           />
           {error && <p className="text-red-500 text-sm text-center">{error}</p>}
           <button
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 font-bold rounded-lg shadow-md hover:shadow-xl transition text-lg tracking-wide"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 font-bold rounded-lg shadow-md hover:shadow-xl transition text-lg tracking-wide disabled:opacity-60 disabled:cursor-not-allowed"
             type="submit"
+            disabled={isSubmitting}
           >
-            Login
+            {isSubmitting ? "logging in" : "Login"}
           </button>
         </form>
         <p className="text-sm md:text-base text-center mt-6">

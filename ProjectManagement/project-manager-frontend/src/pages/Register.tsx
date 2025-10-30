@@ -7,6 +7,7 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const navigate = useNavigate();
 
@@ -15,6 +16,7 @@ export default function Register() {
     e.preventDefault();
     setError("");
     setSuccess("");
+    setIsSubmitting(true);
 
     try {
       await axiosClient.post("/auth/register", { username, password });
@@ -23,6 +25,8 @@ export default function Register() {
       setTimeout(() => navigate("/login"), 1600);
     } catch {
       setError("Registration failed — user may already exist");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -60,10 +64,11 @@ export default function Register() {
           {error && <p className="text-red-500 text-sm">{error}</p>}
 
           <button
-            className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg"
+            className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg disabled:opacity-60 disabled:cursor-not-allowed"
             type="submit"
+            disabled={isSubmitting}
           >
-            Register
+            {isSubmitting ? "registring" : "Register"}
           </button>
         </form>
 

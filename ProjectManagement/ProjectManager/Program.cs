@@ -42,7 +42,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("http://localhost:5173", "https://pathlock-iddz.vercel.app/login")
+        policy.WithOrigins("https://pathlock-iddz.vercel.app")
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -85,7 +85,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 //Enable CORS BEFORE auth middleware
-app.UseCors("AllowReactApp");
+app.UseCors("AllowAll");
 
 //Enable auth
 app.UseAuthentication();

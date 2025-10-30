@@ -68,3 +68,4 @@ C:\Users\adity\Desktop\pathlock\Taskmanager\TaskManagerApi\obj\Debug\net8.0\refi
 C:\Users\adity\Desktop\pathlock\Taskmanager\TaskManagerApi\obj\Debug\net8.0\TaskManagerApi.pdb
 C:\Users\adity\Desktop\pathlock\Taskmanager\TaskManagerApi\obj\Debug\net8.0\TaskManagerApi.genruntimeconfig.cache
 C:\Users\adity\Desktop\pathlock\Taskmanager\TaskManagerApi\obj\Debug\net8.0\ref\TaskManagerApi.dll
+C:\Users\adity\Desktop\pathlock\Taskmanager\TaskManagerApi\obj\Debug\net8.0\TaskManagerApi.sourcelink.json

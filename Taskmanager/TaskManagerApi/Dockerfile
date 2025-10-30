@@ -13,7 +13,7 @@ RUN dotnet publish "TaskManagerApi.csproj" -c Release -o /app/publish /p:UseAppH
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
-ENV ASPNETCORE_URLS=http://+:5173
-EXPOSE 5173
+ENV ASPNETCORE_URLS=http://+:5245
+EXPOSE 5245
 COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "TaskManagerApi.dll"]
